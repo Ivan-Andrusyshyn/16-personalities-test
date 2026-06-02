@@ -20,8 +20,6 @@ import mailerRouter from './routes/mailer.route';
 import googleSheetRouter from './routes/google-sheets.route';
 import starRatingRoute from './routes/star-rating.route';
 import monoRouter from './routes/monopay.route';
-import feedbackRouter from './routes/feedback.route';
-import counterRoute from './routes/counter.route';
 import redisClient from './config/redis.config';
 import { redisService } from './services/redise.service';
 import { initBot } from './bot/bot-instance';
@@ -57,12 +55,9 @@ server.use('/api/google-drive', googleDrive);
 server.use('/api/files', loadFilesRoute);
 
 server.use('/api/consultation', consultationRoute);
-server.use('/api/counter', counterRoute);
 
 server.use('/api/send-email', mailerRouter);
 server.use('/api/google', googleSheetRouter);
-
-server.use('/api/feedback', feedbackRouter);
 
 server.use('/api/tests', personalitiesRouter);
 

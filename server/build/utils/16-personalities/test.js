@@ -3,8 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const _16_personality_1 = require("../../content/16-personality/16-personality");
 const answersTypes_1 = __importDefault(require("./answersTypes"));
+const questions_1 = require("./questions");
 const limits = {
     TF: { typeName: 'TF', questionsLimit: 4 },
     PJ: { typeName: 'PJ', questionsLimit: 6 },
@@ -80,18 +80,18 @@ const addAnswersInTestQuestions = () => {
     };
     const cutTestsArray = [];
     let numberId = 0;
-    for (let i = 0; i < _16_personality_1.questionsPersonality.length; i++) {
-        const qId = _16_personality_1.questionsPersonality[i].id;
+    for (let i = 0; i < questions_1.questionsPersonality.length; i++) {
+        const qId = questions_1.questionsPersonality[i].id;
         const option = (_a = (0, answersTypes_1.default)(qId)[1]) !== null && _a !== void 0 ? _a : { type: '' };
         const typeLetter = option.type;
         const finalType = custumType(typeLetter);
         if (getQuestionsByType(finalType, score)) {
             numberId += 1;
             if ([1, 3, 6, 10, 13, 15, 19, 21, 24, 30].includes(numberId)) {
-                _16_personality_1.questionsPersonality[i].question = changeQuestionsById(numberId);
+                questions_1.questionsPersonality[i].question = changeQuestionsById(numberId);
             }
             cutTestsArray.push({
-                question: _16_personality_1.questionsPersonality[i].question,
+                question: questions_1.questionsPersonality[i].question,
                 id: numberId,
                 answers: (0, answersTypes_1.default)(qId),
             });

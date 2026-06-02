@@ -1,5 +1,3 @@
-import { MainTestNames } from '../content/testsNames';
-
 export type Answer = Record<number, string>;
 export type TestName =
   | 'you-coffee'
@@ -30,7 +28,7 @@ export type TestResultRequest = {
   };
 };
 export type CardContent = {
-  testName: MainTestNames;
+  testName: any;
   time: string;
   category: string[] | string;
   routeStart: string;

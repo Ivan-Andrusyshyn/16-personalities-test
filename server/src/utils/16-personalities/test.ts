@@ -1,5 +1,5 @@
-import { questionsPersonality } from '../../content/16-personality/16-personality';
 import answersTypes from './answersTypes';
+import { questionsPersonality } from './questions';
 
 interface Limits {
   typeName: string;
@@ -98,7 +98,7 @@ const addAnswersInTestQuestions = (): any[] => {
       numberId += 1;
       if ([1, 3, 6, 10, 13, 15, 19, 21, 24, 30].includes(numberId)) {
         questionsPersonality[i].question = changeQuestionsById(
-          numberId
+          numberId,
         ) as string;
       }
       cutTestsArray.push({

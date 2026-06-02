@@ -4,7 +4,6 @@ import { Answer } from '../../types/16-personalities';
 import addTypesInTestQuestions from '../../utils/16-personalities/test';
 import beYourSelfService from '../../services/be-yourself.service';
 import googleSheetsService from '../../services/google-sheets.service';
-import { TestsUserDataModel } from '../../db/models/test-user-data';
 
 interface UserInformation {
   testName: string;
